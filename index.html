@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <!-- Page Title -->
+        <title>DokuMe - Meeting</title>
+
+        <!-- Viewport for another devices -->
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        
+        <!-- Add Bootstrap and Style as CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+        <!-- Add JQuery and Bootstrap as JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+
+    <!-- Page Body with Color and Font-Family -->
+    <body style="background-color: #293848; font-family: 'Source Sans Pro';">
+
+        <header>
+            <!-- DokuMe Header Image -->
+            <img src="https://cdn.dokume.net/img/logo/dokume_logo_white_plain.png"><a href="https://www.dokume.de"></a></img>
+        </header>
+        
+        <!-- Container for Main View -->
+        <div class="container">
+            <div class="card panelHeader">
+                <div class="card-body">
+                    <!-- DokuMe Logo in Panel and Avatr Picture from Jonathan Ott -->
+                    <img src="https://d3v0px0pttie1i.cloudfront.net/uploads/user/logo/10097220/3af889c8.png" class="panelLogo">
+                    <img src="https://d3v0px0pttie1i.cloudfront.net/uploads/user/avatar/10097220/754a2c84.jpg" class="float-left rounded-circle panelHeaderImage">
+                    <div class="message">
+                        <br><br>
+                        <!-- Panel Text -->
+                        <h5 class="card-title headerNameOne">Jonathan Ott</h5>
+                        <h5 class="headerNameTwo">Business Development</h5>
+                        <br>
+                        <h6 class="card-subtitle mb-2 text-muted BaHeader">Beratungstermin online <br>(je 15 min)</h6>
+                        <p class="card-text">Online-Termin: Beratung DokuMe Plattform</p>
+                    </div>
+                </div>
+                <!-- Button for Booking System -->
+                <div class="actions">
+                    <button type="button" class="btn bookingBtn" data-toggle="modal" data-target="#bookingModal">
+                        Wunschtermin buchen!
+                      </button>
+                </div>
+                <br>
+            </div>
+            <!-- Modal to the Booking System and Information -->
+            <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Information</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Hallo, wir haben die Buchung deines Wunschtermins erhalten und melden uns in Kürze bei dir!
+                            <br><br>
+                            Vielen dank!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- View for the Calendar -->
+            <div id="calendar"></div>
+        </div>
+        <script src="js/calendar.js"></script>
+
+        <!-- Script for Calendar Options -->
+        <script>
+        
+        $('#calendar').evoCalendar({
+            'language': 'de',
+            'todayHighlight': true,
+            'eventDisplayDefault': false,
+            'firstDayOfWeek': 1
+        });
+
+        $('#calendar').evoCalendar('addCalendarEvent', [
+            // Own Holidays 
+            {
+                id: '1',
+                name: 'Geburtstag',
+                description: 'Geburtstag von Christoph',
+                date: 'December 15, 2000',
+                type: 'birthday',
+                everyYear: true
+            },
+            {
+                id: '2',
+                name: 'Abgabe',
+                description: 'Abgabe des Kalenders',
+                date: 'March 25, 2000',
+                type: 'event',
+                everyYear: true
+            },
+            // Holidays in Germany 
+            {
+                id: '01.01',
+                name: 'Neujahr',
+                date: 'January 01, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '06.01',
+                name: 'Heilige drei Könige',
+                date: 'January 06, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '08.03',
+                name: 'Frauentag',
+                date: 'March 08, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '02.04',
+                name: 'Karfreitag',
+                date: 'April 02, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '04.04',
+                name: 'Ostersonntag',
+                date: 'April 04, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '05.04',
+                name: 'Ostermontag',
+                date: 'April 05, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '01.05',
+                name: 'Tag der Arbeit',
+                date: 'May 05, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '13.05',
+                name: 'Christi Himmelfahrt',
+                date: 'May 23, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '23.05',
+                name: 'Pfingstsonntag',
+                date: 'May 23, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '24.05',
+                name: 'Pfingstmontag',
+                date: 'May 24, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '03.06',
+                name: 'Fronleichnam',
+                date: 'June 03, 2021',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '15.08',
+                name: 'Himmelfahrt',
+                date: 'August 15, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '20.09',
+                name: 'Weltkindertag',
+                date: 'September 20, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '03.10',
+                name: 'Feiertag',
+                description: 'Tag der deutschen Einheit',
+                date: 'October 03, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '31.10',
+                name: 'Reformationstag',
+                date: 'October 31, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '01.11',
+                name: 'Allerheiligen',
+                date: 'November 11, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '24.12',
+                name: 'Heiliger Abend',
+                date: 'December 24, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '25.12',
+                name: 'Feiertag',
+                description: '1. Weihnachtsfeiertag',
+                date: 'December 25, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '26.12',
+                name: 'Feiertag',
+                description: '2. Weihnachtsfeiertag',
+                date: 'December 26, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+            {
+                id: '31.12',
+                name: 'Silvester',
+                date: 'December 31, 2000',
+                type: 'holiday',
+                everyYear: true
+            },
+        ]);
+        </script>
+        <br>
+    </body>
+</html>
